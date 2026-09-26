@@ -65,7 +65,7 @@ def load_and_clean_data(year, grnd_prix_list):
     df = pd.concat(all_laps, ignore_index=True)
 
     # Filter the necessary columns and remove anomalies (yellow flags, safety car)
-    features= ['GrandPrix', 'LapNumber', 'LapTime', 'Compound', 'TyreLife', 'TrackTemp', 'TrackStatus']
+    features= ['GrandPrix', 'Driver', 'LapNumber', 'LapTime', 'Compound', 'TyreLife', 'TrackTemp', 'TrackStatus']
     df = df[features].dropna()
     df = df[df['TrackStatus'] == '1'] # Only clean racing laps
 
@@ -81,5 +81,5 @@ if __name__ == "__main__":
     tracks = ['Bahrain', 'Austria', 'Silverstone']
     cleaned_df = load_and_clean_data(2024, tracks)
 
-    cleaned_df.to_csv('./data/f1_clean_data_from_ml.csv', index=False)
-    print("The clean data has been saved in './data/f1_clean_data_from_ml.csv'")
+    cleaned_df.to_csv('./data/f1_clean_data_for_ml.csv', index=False)
+    print("The clean data has been saved in './data/f1_clean_data_for_ml.csv'")
