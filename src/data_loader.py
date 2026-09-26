@@ -92,7 +92,6 @@ if __name__ == "__main__":
     os.makedirs('./data', exist_ok=True)
     print("Start collecting data...")
 
-    # tracks = ['Bahrain', 'Austria', 'Silverstone', 'Monza', 'Spa', 'Monaco', 'Barcelona', 'Singapore']
     tracks_to_download = [
         'Bahrain', 'Austria', 'Great Britain', 
         'Italy', 'Belgium', 'Monaco', 
